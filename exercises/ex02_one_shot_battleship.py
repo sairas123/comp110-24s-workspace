@@ -9,10 +9,7 @@ Red_Box: str = "\U0001F7E5"
 grid_size = 4 
 secret_row = 3
 secret_column = 2
-
-# prompt user to guess row and column 
-# Has to be an int
-
+# prompt user to guess row and column and it has to be an int.
 guess_row = int(input("Guess a row:"))
 
 while guess_row < 1 or guess_row > grid_size:
@@ -45,7 +42,7 @@ while row_counter <= grid_size:
         while column_counter <= grid_size:
             if guess_column == column_counter:  # if equal concatenate result bow (red or white) to the row string
                 if guess_column == secret_column:
-                 emoji_chain += Red_Box
+                    emoji_chain += Red_Box
                 else:
                     emoji_chain += White_Box 
             else:
