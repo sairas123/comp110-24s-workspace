@@ -1,12 +1,19 @@
-"""Tutle tutorial"""
+"""Turtle tutorial"""
 
-__author__ = "730439074"
+__author__ = "add"
 
 from turtle import Turtle, colormode, done
-leo: Turtle = Turtle()
 
+leo: Turtle = Turtle()
 i: int = 0
-while (i < 4):
+for _ in range(3):  # Repeat four times for each side of the square
     leo.forward(300)
-    leo.left(90)
-    i = i + 1
+    leo.left(120)
+
+turtle.done()
+
+
+
+
+
+
