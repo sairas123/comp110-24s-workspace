@@ -10,27 +10,16 @@ grid_size = 4
 secret_row = 3
 secret_column = 2
 # prompt user to guess row and column and it has to be an int.
-guess_row = int(input("Guess a row:"))
+guess_row: int = int(input("Guess a row: "))
 
 while guess_row < 1 or guess_row > grid_size:
-    print(f"The grid is only {grid_size} by {grid_size}. Try again:")
-    guess_row = int(input("Guess a row:"))
+    guess_row= int(input(f"The grid is only {grid_size} by {grid_size}. Try again: "))
 
 # print("Guess a column:")
-guess_column = int(input("Guess a column:"))
+guess_column: int = int(input("Guess a column: "))
 
 while guess_column < 1 or guess_column > grid_size:
-    print(f"The grid is only {grid_size} by {grid_size}. Try again:")
-    guess_column = int(input("Guess a row:"))
-
-if guess_row == secret_row and guess_column == secret_column:
-    print("HIT!")
-elif guess_row == secret_row:  # purpose of elif statements is to give a hint
-    print("Correct row, wrong column")
-elif guess_column == secret_column:
-    print("correct column, wrong row")
-else:
-    print("Miss!")
+    guess_column = int(input(f"The grid is only {grid_size} by {grid_size}. Try again: "))
 
 row_counter = 1  # ROW COUNTER
 
@@ -40,7 +29,7 @@ while row_counter <= grid_size:
     column_counter = 1  # COLUMN COUNTER starting at 1   
     if guess_row == row_counter:
         while column_counter <= grid_size:
-            if guess_column == column_counter:  # if equal concatenate result bow (red or white) to the row string
+            if guess_column == column_counter:  # if equal concatenate result; (red or white) to the row string
                 if guess_column == secret_column:
                     emoji_chain += Red_Box
                 else:
@@ -55,3 +44,12 @@ while row_counter <= grid_size:
         # emoji_chain += Blue_Box
     row_counter += 1
     print(emoji_chain)
+
+if guess_row == secret_row and guess_column == secret_column:
+    print("Hit!")
+elif guess_row == secret_row:  # purpose of elif statements is to give a hint
+    print("Close! Correct row, wrong column.")
+elif guess_column == secret_column:
+    print("Close! Correct column, wrong row.")
+else:
+    print("Miss!")

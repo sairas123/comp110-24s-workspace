@@ -1,7 +1,7 @@
 """Number guessing game."""
 from random import randint
 
-Secret: int = randint (1,10)
+Secret: int = randint (1,5)
 correct: bool = False
 
 while correct == False: # not correct
